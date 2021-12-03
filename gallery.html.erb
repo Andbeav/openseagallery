@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <% count = 0; scale = 4 %>
+      <% images.each do |image| %>
+        <a-plane position="<%= count * scale %> 0 -4" rotation="-90 0 0" width="4" height="4" color="lightgrey"></a-plane>
+        <a-plane position="<%= count * scale %> 2 -6" rotation="0 0 0" width="4" height="4" color="white"></a-plane>
+        <a-plane position="<%= count * scale %> 2 -5.99" rotation="0 0 0" width="2" height="2" color="white" src="<%= image %>"></a-plane>
+        <% count += 1 %>
+      <% end %>
+      <a-sky color="skyblue"></a-sky>
+    </a-scene>
+  </body>
+</html>
